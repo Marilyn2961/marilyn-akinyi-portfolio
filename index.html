@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand & Communications Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #f7fafc;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        header .tagline {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .section {
+            padding: 60px 20px;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #1a202c;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #667eea;
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+        
+        .about {
+            background: white;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #4a5568;
+        }
+        
+        .about-content p {
+            margin-bottom: 20px;
+        }
+        
+        .strengths {
+            background: #f7fafc;
+        }
+        
+        .strengths-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .strength-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .strength-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .strength-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .strength-card ul {
+            list-style: none;
+        }
+        
+        .strength-card li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #4a5568;
+        }
+        
+        .strength-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .portfolio {
+            background: white;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .portfolio-item {
+            background: #f7fafc;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+        }
+        
+        .portfolio-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .portfolio-content {
+            padding: 25px;
+        }
+        
+        .portfolio-content h3 {
+            color: #1a202c;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .portfolio-content p {
+            color: #4a5568;
+            margin-bottom: 15px;
+        }
+        
+        .portfolio-tag {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-right: 8px;
+            margin-top: 5px;
+        }
+        
+        .experience {
+            background: #f7fafc;
+        }
+        
+        .experience-item {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .experience-item h3 {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .experience-item .role {
+            color: #1a202c;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .experience-item ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        .experience-item li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #4a5568;
+        }
+        
+        .experience-item li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .contact {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .contact h2 {
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+        
+        .contact-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            background: white;
+            color: #667eea;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            header .tagline {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Marilyn Akinyi</h1>
+            <p class="tagline">Brand & Communications Professional | Visual Identity & Strategic Design | Internet & ICT Ecosystems</p>
+        </div>
+    </header>
+
+    <section class="about section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>I am a Brand and Communications professional with a background in Linguistics, Media, and Communication, and hands-on experience working in Internet governance, ICT, and multi-stakeholder environments. I currently work in Public Relations and Communications at Technology Service Providers of Kenya (TESPOK), where I support brand consistency, strategic messaging, and visual communication across events, reports, digital platforms, and stakeholder engagements.</p>
+                
+                <p>I bring practical, working-level graphic design skills—including social media graphics, presentation decks, reports, and reusable templates—paired with strong judgment in brand stewardship, accessibility, and audience-centered communication. While I am not a specialist designer, I effectively execute core assets, guide creative direction, and manage or review work from designers and vendors.</p>
+                
+                <p>I also have foundational training in Data Science (Moringa School), with skills in SQL, Tableau, and data analysis, which strengthens my ability to make data-informed brand and communication decisions. I am particularly motivated by roles that use brand and design to advance public-interest technology, inclusion, and a trustworthy Internet.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="strengths section">
+        <div class="container">
+            <h2 class="section-title">Key Strengths</h2>
+            <div class="strengths-grid">
+                <div class="strength-card">
+                    <h3>Brand & Visual Identity</h3>
+                    <ul>
+                        <li>Brand governance and consistency</li>
+                        <li>Development of brand templates & toolkits</li>
+                        <li>Visual storytelling for technical audiences</li>
+                    </ul>
+                </div>
+                
+                <div class="strength-card">
+                    <h3>Design & Creative Production</h3>
+                    <ul>
+                        <li>Event branding & collateral</li>
+                        <li>Reports, infographics, social media graphics</li>
+                        <li>Templates for non-design teams</li>
+                    </ul>
+                </div>
+                
+                <div class="strength-card">
+                    <h3>Strategic Communications</h3>
+                    <ul>
+                        <li>PR and communications strategy</li>
+                        <li>Multi-stakeholder engagement</li>
+                        <li>Campaign planning & execution</li>
+                    </ul>
+                </div>
+                
+                <div class="strength-card">
+                    <h3>Accessibility & Inclusive Design</h3>
+                    <ul>
+                        <li>Clear visual hierarchy</li>
+                        <li>Accessible communication principles</li>
+                        <li>Complex concepts → accessible visuals</li>
+                    </ul>
+                </div>
+                
+                <div class="strength-card">
+                    <h3>Internet & ICT Ecosystems</h3>
+                    <ul>
+                        <li>Internet governance & infrastructure</li>
+                        <li>Policy and technical communications</li>
+                        <li>Digital inclusion initiatives</li>
+                    </ul>
+                </div>
+                
+                <div class="strength-card">
+                    <h3>Data-Informed Thinking</h3>
+                    <ul>
+                        <li>Analytics and measurement</li>
+                        <li>Data visualization fundamentals</li>
+                        <li>Evidence-based decision making</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio section">
+        <div class="container">
+            <h2 class="section-title">Portfolio Highlights</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">📊</div>
+                    <div class="portfolio-content">
+                        <h3>Events & Conferences</h3>
+                        <p>Flagship ICT event branding, promotional materials, and post-event communication assets for national and regional Internet ecosystem initiatives.</p>
+                        <span class="portfolio-tag">Brand Identity</span>
+                        <span class="portfolio-tag">Event Collateral</span>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">📈</div>
+                    <div class="portfolio-content">
+                        <h3>Reports & Infographics</h3>
+                        <p>Policy reports, technical documentation, and data visualization translating complex Internet infrastructure topics into accessible formats.</p>
+                        <span class="portfolio-tag">Information Design</span>
+                        <span class="portfolio-tag">Data Viz</span>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">📱</div>
+                    <div class="portfolio-content">
+                        <h3>Social Media Campaigns</h3>
+                        <p>Strategic social media graphics and campaigns for stakeholder engagement, community building, and public awareness initiatives.</p>
+                        <span class="portfolio-tag">Digital Marketing</span>
+                        <span class="portfolio-tag">Social Media</span>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🎨</div>
+                    <div class="portfolio-content">
+                        <h3>Presentation Decks</h3>
+                        <p>Professional presentations and templates for leadership, policy forums, and technical stakeholder meetings.</p>
+                        <span class="portfolio-tag">Presentations</span>
+                        <span class="portfolio-tag">Templates</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience section" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            
+            <div class="experience-item">
+                <h3>Technology Service Providers of Kenya (TESPOK)</h3>
+                <div class="role">Assistant Public Relations Officer | June 2023 – Present</div>
+                <ul>
+                    <li>Support development and execution of marketing and PR campaigns that enhance TESPOK's visibility and stakeholder engagement across the Internet governance and ICT ecosystem</li>
+                    <li>Create compelling content for digital platforms, newsletters, and press releases, ensuring consistent brand messaging across all communication channels</li>
+                    <li>Design and produce event collateral, social media graphics, presentation decks, and post-event communication assets for industry workshops, forums, and national/regional Internet ecosystem initiatives</li>
+                    <li>Coordinate and support industry events, ensuring seamless execution and stakeholder satisfaction while maintaining brand consistency</li>
+                    <li>Collaborate with technical experts, policymakers, and partners to translate complex Internet infrastructure and policy topics into clear, audience-friendly visual content</li>
+                    <li>Utilize data analytics tools (Excel and Tableau) to track campaign performance, media reach, and digital engagement metrics, providing actionable insights for strategy improvement</li>
+                    <li>Guide creative direction and manage or review work from designers and vendors to ensure brand alignment</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Muthaiga Golf Club</h3>
+                <div class="role">Communication & Marketing Intern | June 2021 – March 2022</div>
+                <ul>
+                    <li>Assisted in planning and executing marketing and communication strategies to promote events and member engagement</li>
+                    <li>Organized and coordinated major events, including the 2022 Magical Kenya Open, contributing to the club's public relations success</li>
+                    <li>Collected, cleaned, and analyzed member feedback data using Excel and SQL to identify participation trends and satisfaction drivers</li>
+                    <li>Developed interactive dashboards to visualize event attendance and member demographics, improving management reporting</li>
+                    <li>Managed website updates, newsletters, and member communication channels for improved engagement</li>
+                    <li>Captured and edited photos/videos for promotional content used across digital platforms</li>
+                </ul>
+                <div style="margin-top: 15px; color: #667eea; font-weight: 600;">
+                    <div>🏆 Voted Female Talent to Watch of the Year (2021)</div>
+                    <div>🏆 Voted Best Employee – Marketing (March 2022)</div>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Melbel Group</h3>
+                <div class="role">Communication Assistant | 2021</div>
+                <ul>
+                    <li>Supported creation and dissemination of corporate communication materials, including reports, press releases, and digital content</li>
+                    <li>Assisted in developing and executing communication strategies aligned with organizational goals</li>
+                    <li>Managed media relations, coordinated interviews, and maintained a media database</li>
+                    <li>Implemented data tracking for communication performance metrics, enhancing reporting accuracy and decision-making</li>
+                    <li>Contributed to enhancing brand visibility through proactive storytelling and event coordination</li>
+                </ul>
+            </div>
+            
+
+        </div>
+    </section>
+
+    <section class="experience section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="experience-item">
+                <h3>Moringa School, Nairobi</h3>
+                <div class="role">Data Science Program | 2025</div>
+                <ul>
+                    <li>Completed comprehensive training in Python, SQL, Tableau, Power BI, and machine learning</li>
+                    <li>Developed skills in data analysis, visualization, NLP, and building predictive models</li>
+                    <li>Applied data-informed decision making to brand strategy and communications effectiveness measurement</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Moi University, Eldoret</h3>
+                <div class="role">Bachelor of Arts in Linguistics, Media, and Communication | 2017 – 2022</div>
+                <ul>
+                    <li>Built strong foundation in language structures, communication dynamics, and media production</li>
+                    <li>Developed skills in strategic communication, content creation, and audience analysis</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <div class="contact-buttons">
+                <a href="mailto:akinyimarilyn@gmail.com" class="btn">Email Me</a>
+                <a href="https://linkedin.com/in/yourprofile" class="btn" target="_blank">LinkedIn</a>
+                <a href="https://github.com/Marilyn2961" class="btn" target="_blank">GitHub</a>
+                <a href="#" class="btn">Download CV</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
