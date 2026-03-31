@@ -1,351 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marilyn Akinyi Portfolio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: #2c3e50;
-      color: #fff;
-      padding: 1rem 2rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    nav {
-      margin-top: 0.5rem;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 3rem 2rem;
-    }
-    .section-h {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .eyebrow {
-      text-transform: uppercase;
-      font-size: 0.85rem;
-      color: #555;
-      margin-bottom: 0.5rem;
-    }
-    /* Portfolio Grid */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    .port-card {
-      background: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
-    }
-    .port-card:hover {
-      transform: translateY(-5px);
-    }
-    .port-img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-    .port-body {
-      padding: 1rem;
-    }
-    .port-title {
-      font-weight: bold;
-      margin: 0.5rem 0;
-    }
-    .port-desc {
-      font-size: 0.9rem;
-      color: #555;
-    }
-    .port-tags {
-      margin-bottom: 0.5rem;
-    }
-    .port-tag {
-      display: inline-block;
-      background: #3498db;
-      color: #fff;
-      font-size: 0.75rem;
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      margin-right: 0.3rem;
-    }
-    /* About Section */
-    .about-text {
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 1rem;
-    }
-    /* Contact Form */
-    form {
-      max-width: 500px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    input, textarea, button {
-      padding: 0.8rem;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-      width: 100%;
-    }
-    button {
-      background: #3498db;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    button:hover {
-      background: #2980b9;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #2c3e50;
-      color: #fff;
-      margin-top: 2rem;
-    }
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Marilyn Akinyi — Communications & Data</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+/* ... [Keep all your existing CSS unchanged] ... */
+</style>
 </head>
 <body>
 
-<header>
-  <h1>Marilyn Akinyi</h1>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#work">Work</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Get in Touch</a>
-  </nav>
-</header>
+<nav>
+  <span class="nav-name">Marilyn Akinyi</span>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get in touch</a>
+</nav>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="eyebrow">About</div>
-  <h2 class="section-h">Where Data Meets the Story</h2>
-  <p class="about-text">
-    I'm a communications and PR professional who also speaks data. I work at the intersection of storytelling and analytics, helping organizations understand their audience and make data-driven decisions. Based in Nairobi, I combine insights from Data Science with creative strategies in communications.
-  </p>
-</section>
-
-<!-- WORK -->
-<section id="work">
-  <div class="eyebrow">Work & Events</div>
-  <h2 class="section-h">Portfolio Highlights</h2>
-  <div class="portfolio-grid">
-    <!-- Portfolio Cards (examples from your images) -->
-    <div class="port-card">
-      <img src="images/ai-discussion.jpeg" alt="AI Discussion" class="port-img"/>
-      <div class="port-body">
-        <div class="port-tags">
-          <span class="port-tag">Communications</span>
-          <span class="port-tag">Event</span>
-        </div>
-        <div class="port-title">AI Discussion</div>
-        <div class="port-desc">A session on AI trends and insights.</div>
+<!-- HERO -->
+<section style="padding:0;max-width:none;">
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Communications · Data Science · Nairobi</div>
+      <h1>Where <em>data</em> meets<br/>the story.</h1>
+      <p class="hero-body">
+        I'm a communications and PR professional who also speaks data. I work at the intersection of <strong>strategic storytelling</strong> and <strong>analytical thinking</strong> — helping organizations understand their audiences, sharpen their messaging, and measure what actually matters.
+      </p>
+      <div class="hero-actions">
+        <a href="#work" class="btn-fill">See my work</a>
+        <a href="https://github.com/Marilyn2961/marilyn-akinyi-portfolio/raw/main/Marilyn%20Akinyi%20Resume.pdf" class="btn-ghost">Download CV</a>
       </div>
     </div>
-
-    <div class="port-card">
-      <img src="images/eid-mubarak.jpeg" alt="Eid Mubarak" class="port-img"/>
-      <div class="port-body">
-        <div class="port-tags">
-          <span class="port-tag">Event</span>
-          <span class="port-tag">PR</span>
-        </div>
-        <div class="port-title">Eid Mubarak Campaign</div>
-        <div class="port-desc">Festive campaign for community engagement.</div>
+    <div class="hero-card">
+      <div>
+        <div class="hero-card-intro">What I bring</div>
       </div>
-    </div>
-
-    <div class="port-card">
-      <img src="images/kepf-event.jpeg" alt="KePF Event" class="port-img"/>
-      <div class="port-body">
-        <div class="port-tags">
-          <span class="port-tag">Internet Governance</span>
-          <span class="port-tag">Event</span>
+      <div class="skill-cluster">
+        <div class="skill-cluster-label">Communications</div>
+        <div class="skill-chips">
+          <span class="chip chip-smoke">PR strategy</span>
+          <span class="chip chip-smoke">Brand management</span>
+          <span class="chip chip-smoke">Stakeholder engagement</span>
+          <span class="chip chip-smoke">Event comms</span>
+          <span class="chip chip-smoke">Content creation</span>
         </div>
-        <div class="port-title">KePF Event</div>
-        <div class="port-desc">Kenya Peering Forum highlights and networking.</div>
       </div>
-    </div>
-
-    <div class="port-card">
-      <img src="images/kixp-100g.jpeg" alt="KIXP 100G" class="port-img"/>
-      <div class="port-body">
-        <div class="port-tags">
-          <span class="port-tag">Tech</span>
-          <span class="port-tag">Connectivity</span>
+      <div class="skill-cluster">
+        <div class="skill-cluster-label">Data science</div>
+        <div class="skill-chips">
+          <span class="chip chip-green">Python</span>
+          <span class="chip chip-green">SQL</span>
+          <span class="chip chip-green">Machine learning</span>
+          <span class="chip chip-green">NLP</span>
+          <span class="chip chip-green">Data visualization</span>
         </div>
-        <div class="port-title">KIXP 100G Upgrade</div>
-        <div class="port-desc">High-speed interconnection deployment at KIXP.</div>
       </div>
-    </div>
-
-    <div class="port-card">
-      <img src="images/kixp-interconnection.jpeg" alt="KIXP Interconnection" class="port-img"/>
-      <div class="port-body">
-        <div class="port-tags">
-          <span class="port-tag">Networking</span>
-          <span class="port-tag">Event</span>
+      <div class="skill-cluster">
+        <div class="skill-cluster-label">Tools</div>
+        <div class="skill-chips">
+          <span class="chip chip-gold">Tableau</span>
+          <span class="chip chip-gold">Power BI</span>
+          <span class="chip chip-gold">Excel</span>
+          <span class="chip chip-gold">Canva / Adobe</span>
         </div>
-        <div class="port-title">KIXP Interconnection</div>
-        <div class="port-desc">Interconnection strategy and event coverage.</div>
       </div>
-    </div>
-
-    <div class="port-card">
-      <img src="images/mazingira-day.jpeg" alt="Mazingira Day" class="port-img"/>
-      <div class="port-body">
-        <div class="port-tags">
-          <span class="port-tag">CSR</span>
-          <span class="port-tag">Environmental</span>
-        </div>
-        <div class="port-title">Mazingira Day</div>
-        <div class="port-desc">Environmental awareness campaign.</div>
-      </div>
-    </div>
-
-    <div class="port-card">
-      <img src="images/muthaiga-captains-prize.jpeg" alt="Muthaiga Captains Prize" class="port-img"/>
-      <div class="port-body">
-        <div class="port-tags">
-          <span class="port-tag">Event</span>
-          <span class="port-tag">PR</span>
-        </div>
-        <div class="port-title">Muthaiga Captains Prize</div>
-        <div class="port-desc">Golf club awards and celebrations.</div>
-      </div>
-    </div>
-
-    <div class="port-card">
-      <img src="images/muthaiga-quiz-night.jpeg" alt="Muthaiga Quiz Night" class="port-img"/>
-      <div class="port-body">
-        <div class="port-tags">
-          <span class="port-tag">Event</span>
-          <span class="port-tag">Community</span>
-        </div>
-        <div class="port-title">Muthaiga Quiz Night</div>
-        <div class="port-desc">Interactive quiz event for members.</div>
-      </div>
-    </div>
-
-    <div class="port-card">
-      <img src="images/muthaiga-super-sunday.jpeg" alt="Muthaiga Super Sunday" class="port-img"/>
-      <div class="port-body">
-        <div class="port-tags">
-          <span class="port-tag">Event</span>
-          <span class="port-tag">Community</span>
-        </div>
-        <div class="port-title">Muthaiga Super Sunday</div>
-        <div class="port-desc">Weekend event coverage and storytelling.</div>
-      </div>
-    </div>
-
-    <div class="port-card">
-      <img src="images/muthaiga-valentines.jpeg" alt="Muthaiga Valentines" class="port-img"/>
-      <div class="port-body">
-        <div class="port-tags">
-          <span class="port-tag">Event</span>
-          <span class="port-tag">Campaign</span>
-        </div>
-        <div class="port-title">Muthaiga Valentines</div>
-        <div class="port-desc">Valentine’s Day themed engagement.</div>
-      </div>
-    </div>
-
-    <div class="port-card">
-      <img src="images/muthaiga-wine-tasting.jpeg" alt="Muthaiga Wine Tasting" class="port-img"/>
-      <div class="port-body">
-        <div class="port-tags">
-          <span class="port-tag">Event</span>
-          <span class="port-tag">Lifestyle</span>
-        </div>
-        <div class="port-title">Muthaiga Wine Tasting</div>
-        <div class="port-desc">Wine tasting and networking event.</div>
-      </div>
-    </div>
-
-    <div class="port-card">
-      <img src="images/safer-internet-day.jpeg" alt="Safer Internet Day" class="port-img"/>
-      <div class="port-body">
-        <div class="port-tags">
-          <span class="port-tag">Campaign</span>
-          <span class="port-tag">Awareness</span>
-        </div>
-        <div class="port-title">Safer Internet Day</div>
-        <div class="port-desc">Digital safety and awareness campaign.</div>
-      </div>
-    </div>
-
-    <div class="port-card">
-      <img src="images/tabasamu-fibre.jpg" alt="Tabasamu Fibre" class="port-img"/>
-      <div class="port-body">
-        <div class="port-tags">
-          <span class="port-tag">Technology</span>
-          <span class="port-tag">Connectivity</span>
-        </div>
-        <div class="port-title">Tabasamu Fibre</div>
-        <div class="port-desc">ICT infrastructure rollout coverage.</div>
+      <div class="hero-card-quote">
+        "Most people can tell the story or run the numbers. I do both."
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="eyebrow">Projects</div>
-  <h2 class="section-h">Data Science & Communications Projects</h2>
-  <p class="about-text">
-    Examples of projects combining analytics, storytelling, and communication strategies. Each project reflects my approach to using data insights to enhance decision-making and audience engagement.
-  </p>
+<!-- WORK / PORTFOLIO -->
+<section id="work" class="work-section">
+  <div class="section-inner">
+    <div class="eyebrow">Selected Work</div>
+    <h2 class="section-h">Projects I've Led & Delivered</h2>
+    <div class="portfolio-grid">
+      <div class="port-card">
+        <img src="/images/kixp-100g.jpeg" class="port-img" alt="KIXP 100G Upgrade"/>
+        <div class="port-body">
+          <div class="port-tags">
+            <span class="port-tag">Infrastructure</span>
+            <span class="port-tag">Networking</span>
+          </div>
+          <div class="port-title">KIXP 100G Upgrade</div>
+          <div class="port-desc">Upgrade of Kenya Internet Exchange Point backbone to 100G to enhance connectivity and performance.</div>
+        </div>
+      </div>
+
+      <div class="port-card">
+        <img src="/images/kixp-interconnection.jpeg" class="port-img" alt="KIXP Interconnection"/>
+        <div class="port-body">
+          <div class="port-tags">
+            <span class="port-tag">Peering</span>
+            <span class="port-tag">ICT</span>
+          </div>
+          <div class="port-title">KIXP Interconnection</div>
+          <div class="port-desc">Facilitated regional interconnections and improved Internet resilience across East Africa.</div>
+        </div>
+      </div>
+
+      <div class="port-card">
+        <img src="/images/kepf-event.jpeg" class="port-img" alt="Kenya Peering Forum"/>
+        <div class="port-body">
+          <div class="port-tags">
+            <span class="port-tag">Event</span>
+            <span class="port-tag">Community</span>
+          </div>
+          <div class="port-title">Kenya Peering Forum</div>
+          <div class="port-desc">Organized a forum connecting tech leaders to discuss Internet peering and interconnection.</div>
+        </div>
+      </div>
+
+      <!-- Add more port-cards with your other images here -->
+      <div class="port-card">
+        <img src="/images/ai-discussion.jpeg" class="port-img" alt="AI Discussion"/>
+        <div class="port-body">
+          <div class="port-tags">
+            <span class="port-tag">AI</span>
+            <span class="port-tag">Discussion</span>
+          </div>
+          <div class="port-title">AI Discussion</div>
+          <div class="port-desc">Moderated discussion on artificial intelligence applications in business and governance.</div>
+        </div>
+      </div>
+
+      <div class="port-card">
+        <img src="/images/tabasamu-fibre.jpg" class="port-img" alt="Tabasamu Fibre Launch"/>
+        <div class="port-body">
+          <div class="port-tags">
+            <span class="port-tag">Connectivity</span>
+            <span class="port-tag">Launch</span>
+          </div>
+          <div class="port-title">Tabasamu Fibre</div>
+          <div class="port-desc">Public launch campaign for Tabasamu Fibre broadband services across Nairobi.</div>
+        </div>
+      </div>
+
+      <div class="port-card">
+        <img src="/images/eid-mubarak.jpeg" class="port-img" alt="Eid Mubarak Campaign"/>
+        <div class="port-body">
+          <div class="port-tags">
+            <span class="port-tag">PR</span>
+            <span class="port-tag">Campaign</span>
+          </div>
+          <div class="port-title">Eid Mubarak Campaign</div>
+          <div class="port-desc">Communications campaign engaging community celebrations and social impact initiatives.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="eyebrow">Experience</div>
-  <h2 class="section-h">Professional Journey</h2>
-  <p class="about-text">
-    I have extensive experience in PR, Communications, and Data Science, working across diverse sectors. My roles include strategic communications, social media analytics, event management, and leveraging data for informed decision-making.
-  </p>
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="section-inner">
+    <div class="eyebrow">Get in touch</div>
+    <h2 class="contact-h">Let's talk about your next project.</h2>
+    <p class="contact-sub">Whether it's communications strategy, data analytics, or a combination of both, I'm ready to collaborate.</p>
+    <div class="contact-row">
+      <a href="mailto:marilyn@example.com" class="contact-btn contact-btn-fill">Email Me</a>
+      <a href="https://linkedin.com/in/marilyn-akinyi" class="contact-btn">LinkedIn</a>
+    </div>
+  </div>
 </section>
 
-<!-- GET IN TOUCH -->
-<section id="contact">
-  <div class="eyebrow">Contact</div>
-  <h2 class="section-h">Let's Connect</h2>
-  <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
-    <input type="text" name="name" placeholder="Your Name*" required>
-    <input type="email" name="email" placeholder="Your Email*" required>
-    <textarea name="message" placeholder="Your Message*" rows="5" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
-
+<!-- FOOTER -->
 <footer>
-  &copy; 2026 Marilyn Akinyi. All rights reserved.
+  <div class="footer-name">Marilyn Akinyi</div>
+  <div class="footer-copy">© 2026 Marilyn Akinyi. All rights reserved.</div>
 </footer>
 
 </body>
