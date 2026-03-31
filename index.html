@@ -6,7 +6,235 @@
 <title>Marilyn Akinyi — Communications & Data</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
-/* ... [Keep all your existing CSS unchanged] ... */
+:root {
+  --ink: #1c1917;
+  --ink2: #44403c;
+  --ink3: #78716c;
+  --paper: #faf9f7;
+  --paper2: #f5f3ef;
+  --paper3: #ede9e3;
+  --teal: #0d7a5f;
+  --teal-light: #d1fae5;
+  --teal-mid: #6ee7b7;
+  --gold: #b45309;
+  --gold-light: #fef3c7;
+  --line: rgba(28,25,23,0.1);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden;}
+
+/* NAV */
+nav{
+  position:fixed;top:0;width:100%;z-index:100;
+  background:rgba(250,249,247,0.92);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+  padding:0 60px;height:64px;display:flex;align-items:center;justify-content:space-between;
+}
+.nav-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--ink);}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{font-size:13px;color:var(--ink3);text-decoration:none;letter-spacing:0.3px;transition:color .2s;}
+.nav-links a:hover{color:var(--teal);}
+.nav-cta{font-size:13px;color:var(--teal);border:1px solid var(--teal);padding:7px 18px;border-radius:40px;text-decoration:none;transition:all .2s;}
+.nav-cta:hover{background:var(--teal);color:white;}
+
+/* HERO */
+.hero{
+  min-height:100vh;padding:140px 60px 80px;
+  display:grid;grid-template-columns:1fr 420px;gap:80px;align-items:center;
+  max-width:1200px;margin:0 auto;
+}
+.hero-eyebrow{
+  font-family:'DM Mono',monospace;font-size:11px;color:var(--teal);
+  letter-spacing:2px;text-transform:uppercase;
+  display:flex;align-items:center;gap:12px;margin-bottom:28px;
+}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--teal);}
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(52px,5.5vw,78px);line-height:1.05;
+  color:var(--ink);margin-bottom:28px;font-weight:600;
+}
+.hero h1 em{color:var(--teal);font-style:italic;}
+.hero-body{
+  font-size:17px;line-height:1.8;color:var(--ink2);
+  max-width:520px;margin-bottom:44px;
+}
+.hero-body strong{color:var(--ink);font-weight:500;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-fill{background:var(--ink);color:var(--paper);padding:13px 28px;border-radius:40px;text-decoration:none;font-size:14px;font-weight:500;transition:background .2s;}
+.btn-fill:hover{background:var(--teal);}
+.btn-ghost{border:1px solid var(--line);color:var(--ink2);padding:13px 28px;border-radius:40px;text-decoration:none;font-size:14px;transition:all .2s;}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal);}
+
+/* hero card */
+.hero-card{
+  background:var(--paper2);border:1px solid var(--paper3);
+  border-radius:20px;padding:36px;
+  display:flex;flex-direction:column;gap:24px;
+}
+.hero-card-intro{font-size:13px;color:var(--ink3);font-family:'DM Mono',monospace;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}
+.skill-cluster{display:flex;flex-direction:column;gap:10px;}
+.skill-cluster-label{font-size:11px;color:var(--ink3);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
+.skill-chips{display:flex;flex-wrap:wrap;gap:7px;}
+.chip{font-size:12px;padding:5px 12px;border-radius:20px;font-family:'DM Mono',monospace;}
+.chip-green{background:var(--teal-light);color:#065f46;}
+.chip-gold{background:var(--gold-light);color:#92400e;}
+.chip-smoke{background:var(--paper3);color:var(--ink2);}
+.hero-card-quote{
+  border-left:2px solid var(--teal);padding-left:16px;
+  font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;
+  color:var(--ink2);line-height:1.5;
+}
+
+/* MARQUEE */
+.marquee-wrap{background:var(--ink);padding:16px 0;overflow:hidden;white-space:nowrap;}
+.marquee-inner{display:inline-flex;gap:0;animation:scroll 28s linear infinite;}
+.marquee-item{font-family:'DM Mono',monospace;font-size:12px;color:rgba(255,255,255,0.4);letter-spacing:2px;text-transform:uppercase;padding:0 32px;}
+.marquee-dot{color:var(--teal-mid);margin:0 8px;}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* SECTIONS shared */
+section{padding:100px 60px;}
+.section-inner{max-width:1100px;margin:0 auto;}
+.eyebrow{font-family:'DM Mono',monospace;font-size:11px;color:var(--teal);letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.eyebrow::before{content:'';width:24px;height:1px;background:var(--teal);}
+.section-h{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4vw,52px);color:var(--ink);line-height:1.1;margin-bottom:48px;font-weight:600;}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.about-text p{font-size:16px;line-height:1.85;color:var(--ink2);margin-bottom:18px;}
+.about-text p strong{color:var(--ink);font-weight:500;}
+.about-pull{
+  font-family:'Cormorant Garamond',serif;font-size:26px;font-style:italic;
+  color:var(--ink);line-height:1.4;margin:32px 0;
+  padding-left:24px;border-left:3px solid var(--teal);
+}
+.awards{display:flex;flex-direction:column;gap:12px;margin-top:28px;}
+.award-item{display:flex;align-items:flex-start;gap:14px;padding:16px;background:var(--gold-light);border-radius:10px;}
+.award-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
+.award-text{font-size:14px;color:#92400e;line-height:1.5;}
+.award-text strong{display:block;font-weight:500;}
+
+/* SKILLS sidebar */
+.skills-panel{display:flex;flex-direction:column;gap:28px;}
+.skill-group-title{font-family:'DM Mono',monospace;font-size:11px;color:var(--ink3);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;}
+.skill-list{display:flex;flex-direction:column;gap:10px;}
+.skill-row{display:flex;align-items:center;gap:12px;}
+.skill-label{font-size:13px;color:var(--ink);width:140px;flex-shrink:0;}
+.skill-track{flex:1;height:4px;background:var(--paper3);border-radius:2px;}
+.skill-bar{height:4px;border-radius:2px;background:var(--teal);}
+
+/* WORK */
+.work-section{background:var(--ink);}
+.work-section .eyebrow{color:var(--teal-mid);}
+.work-section .eyebrow::before{background:var(--teal-mid);}
+.work-section .section-h{color:white;}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.port-card{
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);
+  border-radius:14px;overflow:hidden;
+  transition:transform .25s,border-color .25s;cursor:default;
+}
+.port-card:hover{transform:translateY(-5px);border-color:rgba(29,158,117,0.5);}
+.port-img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#162236;}
+.port-img-placeholder{
+  width:100%;aspect-ratio:16/9;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.2);
+  letter-spacing:1px;
+}
+.port-body{padding:18px 20px 22px;}
+.port-tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px;}
+.port-tag{font-family:'DM Mono',monospace;font-size:10px;color:var(--teal-mid);background:rgba(110,231,183,0.08);padding:3px 8px;border-radius:10px;}
+.port-title{font-family:'Cormorant Garamond',serif;font-size:19px;color:white;margin-bottom:7px;font-weight:600;}
+.port-desc{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6;}
+
+/* DATA PROJECTS */
+.projects-section{background:var(--paper2);}
+.project-card{
+  background:white;border:1px solid var(--paper3);border-radius:14px;
+  padding:28px 32px;margin-bottom:16px;
+  display:grid;grid-template-columns:1fr auto;align-items:start;gap:24px;
+  transition:border-color .2s,box-shadow .2s;
+}
+.project-card:hover{border-color:var(--teal);box-shadow:0 4px 24px rgba(13,122,95,0.07);}
+.project-number{font-family:'DM Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:6px;}
+.project-name{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--ink);margin-bottom:8px;font-weight:600;}
+.project-desc{font-size:14px;color:var(--ink2);line-height:1.7;margin-bottom:14px;}
+.project-stack{display:flex;gap:7px;flex-wrap:wrap;}
+.stack-pill{font-family:'DM Mono',monospace;font-size:11px;color:var(--teal);background:var(--teal-light);padding:3px 10px;border-radius:10px;}
+.project-link{
+  font-family:'DM Mono',monospace;font-size:12px;color:var(--teal);
+  text-decoration:none;border:1px solid rgba(13,122,95,0.25);
+  padding:9px 18px;border-radius:8px;white-space:nowrap;
+  transition:all .2s;flex-shrink:0;margin-top:4px;
+}
+.project-link:hover{background:var(--teal);color:white;}
+
+/* TIMELINE */
+.timeline-section{background:white;}
+.timeline{display:flex;flex-direction:column;gap:0;max-width:740px;}
+.tl-item{display:grid;grid-template-columns:180px 1fr;gap:40px;padding-bottom:52px;position:relative;}
+.tl-item:not(:last-child)::after{
+  content:'';position:absolute;
+  left:calc(180px + 19px);top:10px;bottom:0;
+  width:1px;background:var(--paper3);
+}
+.tl-date{font-family:'DM Mono',monospace;font-size:12px;color:var(--ink3);text-align:right;padding-top:2px;line-height:1.5;}
+.tl-dot{
+  position:absolute;left:calc(180px + 14px);top:4px;
+  width:12px;height:12px;border-radius:50%;
+  background:var(--teal);border:2px solid white;box-shadow:0 0 0 2px var(--teal);
+}
+.tl-org{font-family:'DM Mono',monospace;font-size:11px;color:var(--teal);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}
+.tl-role{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--ink);margin-bottom:10px;font-weight:600;}
+.tl-desc{font-size:14px;color:var(--ink2);line-height:1.75;}
+.tl-badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--gold);background:var(--gold-light);padding:4px 10px;border-radius:20px;margin-top:10px;margin-right:6px;}
+
+/* CONTACT */
+.contact-section{background:var(--ink);text-align:center;}
+.contact-section .eyebrow{justify-content:center;color:var(--teal-mid);}
+.contact-section .eyebrow::before{display:none;}
+.contact-h{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,68px);color:white;margin-bottom:18px;font-weight:600;line-height:1.1;}
+.contact-h em{color:var(--teal-mid);font-style:italic;}
+.contact-sub{font-size:16px;color:rgba(255,255,255,0.45);margin-bottom:52px;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.7;}
+.contact-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+.contact-btn{
+  display:flex;align-items:center;gap:9px;
+  padding:14px 26px;border:1px solid rgba(255,255,255,0.12);
+  border-radius:40px;color:rgba(255,255,255,0.6);
+  text-decoration:none;font-size:14px;transition:all .2s;
+}
+.contact-btn:hover{border-color:var(--teal-mid);color:var(--teal-mid);}
+.contact-btn-fill{background:var(--teal);border-color:var(--teal);color:white;}
+.contact-btn-fill:hover{background:#0a6650;border-color:#0a6650;color:white;}
+
+footer{background:#0f0e0c;padding:24px 60px;display:flex;justify-content:space-between;align-items:center;}
+.footer-name{font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(255,255,255,0.2);font-size:15px;}
+.footer-copy{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.15);letter-spacing:1px;}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero-eyebrow{animation:fadeUp .6s ease both;}
+.hero h1{animation:fadeUp .7s .1s ease both;}
+.hero-body{animation:fadeUp .7s .2s ease both;}
+.hero-actions{animation:fadeUp .7s .3s ease both;}
+.hero-card{animation:fadeUp .7s .2s ease both;}
+
+@media(max-width:900px){
+  nav{padding:0 24px;}
+  .hero{grid-template-columns:1fr;padding:120px 24px 60px;gap:48px;}
+  .hero-card{display:none;}
+  section{padding:72px 24px;}
+  .about-grid{grid-template-columns:1fr;gap:48px;}
+  .portfolio-grid{grid-template-columns:1fr;}
+  .tl-item{grid-template-columns:1fr;gap:8px;}
+  .tl-item::after{display:none;}
+  .tl-dot{display:none;}
+  .tl-date{text-align:left;}
+  footer{flex-direction:column;gap:8px;text-align:center;}
+}
 </style>
 </head>
 <body>
@@ -76,82 +304,270 @@
   </div>
 </section>
 
-<!-- WORK / PORTFOLIO -->
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <span class="marquee-item">Communications Strategy<span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Data Science<span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Brand Identity<span class="marquee-dot">·</span></span>
+    <span class="marquee-item">NLP & Sentiment Analysis<span class="marquee-dot">·</span></span>
+    <span class="marquee-item">PR & Media Relations<span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Machine Learning<span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Stakeholder Engagement<span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Python & SQL<span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Internet Governance<span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Event Production<span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Communications Strategy<span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Data Science<span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Brand Identity<span class="marquee-dot">·</span></span>
+    <span class="marquee-item">NLP & Sentiment Analysis<span class="marquee-dot">·</span></span>
+    <span class="marquee-item">PR & Media Relations<span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Machine Learning<span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Stakeholder Engagement<span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Python & SQL<span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Internet Governance<span class="marquee-dot">·</span></span>
+    <span class="marquee-item">Event Production<span class="marquee-dot">·</span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="eyebrow">About me</div>
+    <div class="about-grid">
+      <div class="about-text">
+        <h2 class="section-h" style="margin-bottom:24px;">The analyst who can write.<br/>The writer who can analyse.</h2>
+        <p>I grew up fascinated by two things: <strong>how language works</strong> and <strong>what patterns reveal</strong>. My linguistics degree gave me the first. My data science training at Moringa School gave me the second. My career at TESPOK is where I get to use both.</p>
+        <p>At TESPOK — Kenya's association for technology service providers — I manage communications, shape brand narratives, and make sure our work on Internet governance and ICT infrastructure is understood by the people who need to act on it. Translating the technical into the human is what I do every day.</p>
+        <p>Outside of that, I've been building a body of data science work — sentiment analysis, churn prediction, risk modelling — that I'm genuinely proud of. The projects on this site aren't just academic exercises; they're the kind of analysis I want to do for real organizations.</p>
+        <div class="about-pull">
+          "I believe the most powerful insight is worthless if it can't be communicated. That's the gap I live in."
+        </div>
+        <div class="awards">
+          <div class="award-item">
+            <span class="award-icon">🏆</span>
+            <div class="award-text"><strong>Female Talent to Watch of the Year — 2021</strong>Muthaiga Golf Club staff recognition programme</div>
+          </div>
+          <div class="award-item">
+            <span class="award-icon">🏆</span>
+            <div class="award-text"><strong>Best Employee, Marketing — March 2022</strong>Muthaiga Golf Club quarterly awards</div>
+          </div>
+        </div>
+      </div>
+      <div class="skills-panel">
+        <div>
+          <div class="skill-group-title">Communications & PR</div>
+          <div class="skill-list">
+            <div class="skill-row"><span class="skill-label">PR strategy</span><div class="skill-track"><div class="skill-bar" style="width:95%"></div></div></div>
+            <div class="skill-row"><span class="skill-label">Brand management</span><div class="skill-track"><div class="skill-bar" style="width:92%"></div></div></div>
+            <div class="skill-row"><span class="skill-label">Content creation</span><div class="skill-track"><div class="skill-bar" style="width:90%"></div></div></div>
+            <div class="skill-row"><span class="skill-label">Event comms</span><div class="skill-track"><div class="skill-bar" style="width:88%"></div></div></div>
+            <div class="skill-row"><span class="skill-label">Media relations</span><div class="skill-track"><div class="skill-bar" style="width:85%"></div></div></div>
+          </div>
+        </div>
+        <div>
+          <div class="skill-group-title">Data science</div>
+          <div class="skill-list">
+            <div class="skill-row"><span class="skill-label">Python / Pandas</span><div class="skill-track"><div class="skill-bar" style="width:82%"></div></div></div>
+            <div class="skill-row"><span class="skill-label">SQL</span><div class="skill-track"><div class="skill-bar" style="width:80%"></div></div></div>
+            <div class="skill-row"><span class="skill-label">Machine learning</span><div class="skill-track"><div class="skill-bar" style="width:74%"></div></div></div>
+            <div class="skill-row"><span class="skill-label">NLP</span><div class="skill-track"><div class="skill-bar" style="width:72%"></div></div></div>
+            <div class="skill-row"><span class="skill-label">Data visualization</span><div class="skill-track"><div class="skill-bar" style="width:78%"></div></div></div>
+          </div>
+        </div>
+        <div style="background:var(--paper2);border-radius:14px;padding:24px;">
+          <div class="skill-group-title" style="margin-bottom:16px;">At a glance</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div><div style="font-family:'Cormorant Garamond',serif;font-size:38px;color:var(--ink);font-weight:600;line-height:1;">2+</div><div style="font-size:12px;color:var(--ink3);margin-top:2px;">years at TESPOK</div></div>
+            <div><div style="font-family:'Cormorant Garamond',serif;font-size:38px;color:var(--ink);font-weight:600;line-height:1;">15+</div><div style="font-size:12px;color:var(--ink3);margin-top:2px;">comms projects</div></div>
+            <div><div style="font-family:'Cormorant Garamond',serif;font-size:38px;color:var(--ink);font-weight:600;line-height:1;">4</div><div style="font-size:12px;color:var(--ink3);margin-top:2px;">DS projects built</div></div>
+            <div><div style="font-family:'Cormorant Garamond',serif;font-size:38px;color:var(--ink);font-weight:600;line-height:1;">2</div><div style="font-size:12px;color:var(--ink3);margin-top:2px;">industry awards</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
 <section id="work" class="work-section">
   <div class="section-inner">
-    <div class="eyebrow">Selected Work</div>
-    <h2 class="section-h">Projects I've Led & Delivered</h2>
+    <div class="eyebrow">Portfolio</div>
+    <h2 class="section-h">Communications work</h2>
     <div class="portfolio-grid">
+
       <div class="port-card">
-        <img src="/images/kixp-100g.jpeg" class="port-img" alt="KIXP 100G Upgrade"/>
+        <img src="images /kixp-100g.jpeg" alt="KIXP 100G" class="port-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="port-img-placeholder" style="display:none;background:#162236;">KIXP 100G</div>
         <div class="port-body">
-          <div class="port-tags">
-            <span class="port-tag">Infrastructure</span>
-            <span class="port-tag">Networking</span>
-          </div>
-          <div class="port-title">KIXP 100G Upgrade</div>
-          <div class="port-desc">Upgrade of Kenya Internet Exchange Point backbone to 100G to enhance connectivity and performance.</div>
+          <div class="port-tags"><span class="port-tag">Infrastructure</span><span class="port-tag">Social media</span></div>
+          <div class="port-title">KIXP 100G Port Peering Launch</div>
+          <div class="port-desc">Promotional graphic for Kenya Internet Exchange Point's 100G port peering infrastructure announcement.</div>
         </div>
       </div>
 
       <div class="port-card">
-        <img src="/images/kixp-interconnection.jpeg" class="port-img" alt="KIXP Interconnection"/>
+        <img src="images /kepf-event.jpeg" alt="KEPF 2024" class="port-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="port-img-placeholder" style="display:none;background:#1a2030;">KEPF 2024</div>
         <div class="port-body">
-          <div class="port-tags">
-            <span class="port-tag">Peering</span>
-            <span class="port-tag">ICT</span>
-          </div>
-          <div class="port-title">KIXP Interconnection</div>
-          <div class="port-desc">Facilitated regional interconnections and improved Internet resilience across East Africa.</div>
+          <div class="port-tags"><span class="port-tag">Event design</span><span class="port-tag">Photography</span></div>
+          <div class="port-title">Kenya Peering Forum 2024</div>
+          <div class="port-desc">Save-the-date collateral for KEPF — Kenya's flagship Internet infrastructure networking event.</div>
         </div>
       </div>
 
       <div class="port-card">
-        <img src="/images/kepf-event.jpeg" class="port-img" alt="Kenya Peering Forum"/>
+        <img src="images /ai-discussion.jpeg" alt="AI Forum" class="port-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="port-img-placeholder" style="display:none;background:#1a2536;">AI Forum</div>
         <div class="port-body">
-          <div class="port-tags">
-            <span class="port-tag">Event</span>
-            <span class="port-tag">Community</span>
-          </div>
-          <div class="port-title">Kenya Peering Forum</div>
-          <div class="port-desc">Organized a forum connecting tech leaders to discuss Internet peering and interconnection.</div>
-        </div>
-      </div>
-
-      <!-- Add more port-cards with your other images here -->
-      <div class="port-card">
-        <img src="/images/ai-discussion.jpeg" class="port-img" alt="AI Discussion"/>
-        <div class="port-body">
-          <div class="port-tags">
-            <span class="port-tag">AI</span>
-            <span class="port-tag">Discussion</span>
-          </div>
-          <div class="port-title">AI Discussion</div>
-          <div class="port-desc">Moderated discussion on artificial intelligence applications in business and governance.</div>
+          <div class="port-tags"><span class="port-tag">Tech policy</span><span class="port-tag">Event design</span></div>
+          <div class="port-title">AI in Kenya Stakeholder Forum</div>
+          <div class="port-desc">Event promotion for a multi-stakeholder discussion on AI regulation and emerging technology frameworks.</div>
         </div>
       </div>
 
       <div class="port-card">
-        <img src="/images/tabasamu-fibre.jpg" class="port-img" alt="Tabasamu Fibre Launch"/>
+        <img src="images /safer-internet-day.jpeg" alt="Safer Internet Day" class="port-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="port-img-placeholder" style="display:none;background:#0d1e2e;">Safer Internet</div>
         <div class="port-body">
-          <div class="port-tags">
-            <span class="port-tag">Connectivity</span>
-            <span class="port-tag">Launch</span>
-          </div>
-          <div class="port-title">Tabasamu Fibre</div>
-          <div class="port-desc">Public launch campaign for Tabasamu Fibre broadband services across Nairobi.</div>
+          <div class="port-tags"><span class="port-tag">Awareness</span><span class="port-tag">Social media</span></div>
+          <div class="port-title">Safer Internet Day Campaign</div>
+          <div class="port-desc">Digital safety awareness campaign reaching TESPOK's network of ISPs and technology stakeholders.</div>
         </div>
       </div>
 
       <div class="port-card">
-        <img src="/images/eid-mubarak.jpeg" class="port-img" alt="Eid Mubarak Campaign"/>
+        <img src="images /kixp-interconnection.jpeg" alt="KIXP Interconnection" class="port-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="port-img-placeholder" style="display:none;background:#141e2c;">KIXP Network</div>
         <div class="port-body">
-          <div class="port-tags">
-            <span class="port-tag">PR</span>
-            <span class="port-tag">Campaign</span>
+          <div class="port-tags"><span class="port-tag">Digital marketing</span><span class="port-tag">Brand</span></div>
+          <div class="port-title">KIXP Nairobi Interconnection</div>
+          <div class="port-desc">Marketing material highlighting KIXP's peering connectivity services and network resilience.</div>
+        </div>
+      </div>
+
+      <div class="port-card" style="background:rgba(13,122,95,0.07);border-color:rgba(13,122,95,0.2);">
+        <div style="padding:28px 24px 0;">
+          <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--teal-mid);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Presentation deck · March 2024</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:white;font-weight:600;margin-bottom:10px;">KIXP Infrastructure Presentation</div>
+          <div style="font-size:13px;color:rgba(255,255,255,0.4);line-height:1.6;margin-bottom:20px;">Technical stakeholder deck on KIXP infrastructure, peering services, and network connectivity solutions.</div>
+          <a href="KIXP Presentation 130324_v2(1).pdf" style="font-family:'DM Mono',monospace;font-size:11px;color:var(--teal-mid);text-decoration:none;border:1px solid rgba(110,231,183,0.25);padding:8px 14px;border-radius:6px;display:inline-block;">View PDF →</a>
+        </div>
+        <div class="port-body" style="padding-top:16px;">
+          <div class="port-tags"><span class="port-tag">Technical docs</span><span class="port-tag">Presentations</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DATA PROJECTS -->
+<section id="projects" class="projects-section">
+  <div class="section-inner">
+    <div class="eyebrow">Data science</div>
+    <h2 class="section-h">GitHub projects</h2>
+    <p style="font-size:16px;color:var(--ink2);max-width:580px;line-height:1.7;margin-bottom:48px;margin-top:-24px;">Four real-world analysis projects built during my Moringa School training — each grounded in a genuine business problem.</p>
+
+    <div class="project-card">
+      <div>
+        <div class="project-number">01 / Telecom</div>
+        <div class="project-name">Customer Churn Prediction</div>
+        <div class="project-desc">Full machine learning pipeline predicting which telecom customers are likely to leave — from raw data to business recommendations. Directly applicable to comms and CRM strategy for telcos and large organizations.</div>
+        <div class="project-stack">
+          <span class="stack-pill">Python</span><span class="stack-pill">Scikit-learn</span><span class="stack-pill">Pandas</span><span class="stack-pill">Classification</span>
+        </div>
+      </div>
+      <a href="https://github.com/Marilyn2961/Telecom_Churn_Prediction_Project" target="_blank" class="project-link">GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div>
+        <div class="project-number">02 / NLP</div>
+        <div class="project-name">Twitter Sentiment — Apple vs Google</div>
+        <div class="project-desc">NLP analysis of brand perception on Twitter for two of the world's most tracked consumer brands. The kind of analysis PR teams need to understand public sentiment and reputation risk in real time.</div>
+        <div class="project-stack">
+          <span class="stack-pill">Python</span><span class="stack-pill">NLP</span><span class="stack-pill">NLTK</span><span class="stack-pill">Sentiment analysis</span>
+        </div>
+      </div>
+      <a href="https://github.com/Marilyn2961/A-Comparative-Analysis-of-Public-Sentiment-on-Twitter-towards-Apple-and-Google-Products-using-NLP" target="_blank" class="project-link">GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div>
+        <div class="project-number">03 / Risk analysis</div>
+        <div class="project-name">Aviation Risk Analysis</div>
+        <div class="project-desc">Data-driven evaluation of aircraft safety and reliability for companies entering aviation — turning messy incident data into clear, defensible investment recommendations.</div>
+        <div class="project-stack">
+          <span class="stack-pill">Python</span><span class="stack-pill">EDA</span><span class="stack-pill">Matplotlib</span><span class="stack-pill">Pandas</span>
+        </div>
+      </div>
+      <a href="https://github.com/Marilyn2961/Aviation-Risk-Analysis" target="_blank" class="project-link">GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div>
+        <div class="project-number">04 / Business intelligence</div>
+        <div class="project-name">Box Office Performance Analysis</div>
+        <div class="project-desc">Exploratory analysis of film industry data to identify the genres and trends that drive box office success — a clean example of translating data patterns into actionable content strategy.</div>
+        <div class="project-stack">
+          <span class="stack-pill">Python</span><span class="stack-pill">EDA</span><span class="stack-pill">Seaborn</span><span class="stack-pill">Matplotlib</span>
+        </div>
+      </div>
+      <a href="https://github.com/Marilyn2961/Box-Office-Performance-Analysis" target="_blank" class="project-link">GitHub →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="timeline-section">
+  <div class="section-inner">
+    <div class="eyebrow">Career</div>
+    <h2 class="section-h">Experience & education</h2>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-date">Jul 2023<br/>Present</div>
+        <div>
+          <div class="tl-dot"></div>
+          <div class="tl-org">TESPOK · Full-time</div>
+          <div class="tl-role">PR & Communications Assistant</div>
+          <div class="tl-desc">Supporting brand visibility, stakeholder engagement, and strategic communications for Kenya's technology service providers association and the Kenya Internet Exchange Point (KIXP). Manage event branding, digital content, press releases, and multi-stakeholder communications across the Internet governance and ICT ecosystem.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">Feb 2025<br/>Oct 2025</div>
+        <div>
+          <div class="tl-dot"></div>
+          <div class="tl-org">Moringa School · Training</div>
+          <div class="tl-role">Data Science Program</div>
+          <div class="tl-desc">Comprehensive training in Python, SQL, machine learning, NLP, data visualization, and AI fundamentals. Built four applied projects solving real business problems — churn prediction, sentiment analysis, risk analysis, and BI reporting.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">Jun 2021<br/>Mar 2022</div>
+        <div>
+          <div class="tl-dot"></div>
+          <div class="tl-org">Muthaiga Golf Club · Internship</div>
+          <div class="tl-role">Marketing & Communications Intern</div>
+          <div class="tl-desc">Managed brand presence, member engagement campaigns, and major event marketing including the 2022 Magical Kenya Open. Built dashboards to visualize event attendance and member demographics. Managed website, newsletters, and digital channels.</div>
+          <div>
+            <span class="tl-badge">🏆 Female Talent to Watch 2021</span>
+            <span class="tl-badge">🏆 Best Employee, Marketing 2022</span>
           </div>
-          <div class="port-title">Eid Mubarak Campaign</div>
-          <div class="port-desc">Communications campaign engaging community celebrations and social impact initiatives.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">2017<br/>2022</div>
+        <div>
+          <div class="tl-dot"></div>
+          <div class="tl-org">Moi University · Degree</div>
+          <div class="tl-role">BA Linguistics, Media & Communication</div>
+          <div class="tl-desc">Built strong foundations in strategic communication, language analysis, content creation, and audience theory. The base on which everything else is built.</div>
         </div>
       </div>
 
@@ -160,22 +576,23 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="contact-section">
+<section class="contact-section">
   <div class="section-inner">
-    <div class="eyebrow">Get in touch</div>
-    <h2 class="contact-h">Let's talk about your next project.</h2>
-    <p class="contact-sub">Whether it's communications strategy, data analytics, or a combination of both, I'm ready to collaborate.</p>
+    <div class="eyebrow">Say hello</div>
+    <h2 class="contact-h">Let's <em>connect.</em></h2>
+    <p class="contact-sub">Whether you want to discuss a project, talk data and comms, or just connect — my inbox is open.</p>
     <div class="contact-row">
-      <a href="mailto:marilyn@example.com" class="contact-btn contact-btn-fill">Email Me</a>
-      <a href="https://linkedin.com/in/marilyn-akinyi" class="contact-btn">LinkedIn</a>
+      <a href="mailto:akinyimarilyn@gmail.com" class="contact-btn contact-btn-fill">Email me</a>
+      <a href="https://www.linkedin.com/in/marilyn-akinyi-602b99214" target="_blank" class="contact-btn">LinkedIn</a>
+      <a href="https://github.com/Marilyn2961" target="_blank" class="contact-btn">GitHub</a>
+      <a href="https://github.com/Marilyn2961/marilyn-akinyi-portfolio/raw/main/Marilyn%20Akinyi%20Resume.pdf" class="contact-btn">Download CV</a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <div class="footer-name">Marilyn Akinyi</div>
-  <div class="footer-copy">© 2026 Marilyn Akinyi. All rights reserved.</div>
+  <span class="footer-name">Marilyn Akinyi</span>
+  <span class="footer-copy">Nairobi, Kenya · 2025</span>
 </footer>
 
 </body>
