@@ -7,12 +7,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
 :root{
-  --ink:#1c1917;--ink2:#44403c;--ink3:#78716c;
-  --paper:#faf9f7;--paper2:#f5f3ef;--paper3:#ede9e3;
-  --teal:#0d7a5f;--teal-light:#d1fae5;--teal-mid:#34d399;
-  --blue:#1e5fa5;--blue-light:#dbeafe;
-  --gold:#b45309;--gold-light:#fef3c7;
-  --line:rgba(28,25,23,0.1);
+  /* Neutrals */
+  --ink:#1a1a18;--ink2:#3d3d38;--ink3:#7a7a72;
+  --paper:#f8f6f2;--paper2:#f1ede6;--paper3:#e8e2d8;
+  --line:rgba(26,26,24,0.09);
+  /* Primary: teal green (accent throughout) */
+  --green:#0d7a5f;--green-mid:#1a9e7a;--green-light:#e0f5ef;--green-pale:#f0faf6;
+  /* Dark sections: deep navy */
+  --dark:#0a1628;--dark2:#0f1f38;
+  /* Warm accent: only for awards/highlights */
+  --terra:#8c3d1a;--terra-light:#faf0ea;
   --nav-h:64px;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -30,9 +34,9 @@ nav{
 .nav-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--ink);}
 .nav-links{display:flex;gap:32px;list-style:none;}
 .nav-links a{font-size:13px;color:var(--ink3);text-decoration:none;letter-spacing:.3px;transition:color .2s;}
-.nav-links a:hover{color:var(--teal);}
-.nav-cta{font-size:13px;color:var(--teal);border:1px solid var(--teal);padding:7px 20px;border-radius:40px;text-decoration:none;transition:all .2s;}
-.nav-cta:hover{background:var(--teal);color:#fff;}
+.nav-links a:hover{color:var(--green);}
+.nav-cta{font-size:13px;color:var(--green);border:1px solid var(--green);padding:7px 20px;border-radius:40px;text-decoration:none;transition:all .2s;}
+.nav-cta:hover{background:var(--green);color:#fff;}
 
 /* ── HERO ── */
 .hero{
@@ -41,30 +45,30 @@ nav{
   max-width:1200px;margin:0 auto;
 }
 .eyebrow-sm{
-  font-family:'DM Mono',monospace;font-size:11px;color:var(--teal);
+  font-family:'DM Mono',monospace;font-size:11px;color:var(--green);
   letter-spacing:2px;text-transform:uppercase;
   display:flex;align-items:center;gap:12px;margin-bottom:24px;
 }
-.eyebrow-sm::before{content:'';width:28px;height:1px;background:var(--teal);}
+.eyebrow-sm::before{content:'';width:28px;height:1px;background:var(--green);}
 h1.hero-name{
   font-family:'Cormorant Garamond',serif;
   font-size:clamp(54px,5.8vw,82px);line-height:1.04;
   color:var(--ink);margin-bottom:22px;font-weight:600;
 }
-h1.hero-name em{color:var(--teal);font-style:italic;}
+h1.hero-name em{color:var(--green);font-style:italic;}
 .hero-body{font-size:17px;line-height:1.85;color:var(--ink2);max-width:520px;margin-bottom:40px;}
 .hero-body strong{color:var(--ink);font-weight:500;}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px;}
-.btn-fill{background:var(--ink);color:var(--paper);padding:13px 28px;border-radius:40px;text-decoration:none;font-size:14px;font-weight:500;transition:background .2s;}
-.btn-fill:hover{background:var(--teal);}
+.btn-fill{background:var(--dark);color:var(--paper);padding:13px 28px;border-radius:40px;text-decoration:none;font-size:14px;font-weight:500;transition:background .2s;}
+.btn-fill:hover{background:var(--green);}
 .btn-ghost{border:1px solid rgba(28,25,23,.18);color:var(--ink2);padding:13px 28px;border-radius:40px;text-decoration:none;font-size:14px;transition:all .2s;}
-.btn-ghost:hover{border-color:var(--teal);color:var(--teal);}
+.btn-ghost:hover{border-color:var(--green);color:var(--green);}
 
 /* dual identity badge */
 .dual-badge{display:inline-flex;gap:0;border:1px solid var(--line);border-radius:40px;overflow:hidden;margin-bottom:40px;}
 .db-half{padding:8px 20px;font-size:12px;font-family:'DM Mono',monospace;letter-spacing:.5px;}
-.db-comms{background:var(--gold-light);color:var(--gold);}
-.db-data{background:var(--teal-light);color:var(--teal);}
+.db-comms{background:var(--terra-light);color:var(--terra);}
+.db-data{background:var(--green-light);color:var(--green);}
 
 /* hero side card */
 .hero-card{
@@ -75,63 +79,63 @@ h1.hero-name em{color:var(--teal);font-style:italic;}
 .hc-label{font-family:'DM Mono',monospace;font-size:10px;color:var(--ink3);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;}
 .hc-chips{display:flex;flex-wrap:wrap;gap:7px;}
 .chip{font-size:12px;padding:5px 12px;border-radius:20px;font-family:'DM Mono',monospace;letter-spacing:.3px;}
-.chip-teal{background:var(--teal-light);color:#065f46;}
-.chip-gold{background:var(--gold-light);color:#92400e;}
-.chip-blue{background:var(--blue-light);color:#1e3a8a;}
+.chip-teal{background:var(--green-light);color:#1a5c45;}
+.chip-gold{background:var(--terra-light);color:#8c3d1a;}
+.chip-blue{background:var(--green-pale);color:#1a5c45;}
 .hc-divider{height:1px;background:var(--line);}
 .hc-quote{
   font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;
   color:var(--ink2);line-height:1.55;padding-left:14px;
-  border-left:2px solid var(--teal);
+  border:1px solid var(--green);
 }
 
 /* ── MARQUEE ── */
-.marquee-wrap{background:var(--ink);padding:15px 0;overflow:hidden;white-space:nowrap;}
+.marquee-wrap{background:var(--dark);padding:15px 0;overflow:hidden;white-space:nowrap;}
 .marquee-inner{display:inline-flex;animation:ticker 32s linear infinite;}
 .mi{font-family:'DM Mono',monospace;font-size:12px;color:rgba(255,255,255,.35);letter-spacing:2px;text-transform:uppercase;padding:0 28px;}
-.mi span{color:var(--teal-mid);margin:0 6px;}
+.mi span{color:var(--green-mid);margin:0 6px;}
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ── SECTION SHARED ── */
 .sec{padding:96px 60px;}
 .sec-inner{max-width:1100px;margin:0 auto;}
-.ew{font-family:'DM Mono',monospace;font-size:11px;color:var(--teal);letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:14px;}
-.ew::before{content:'';width:22px;height:1px;background:var(--teal);}
+.ew{font-family:'DM Mono',monospace;font-size:11px;color:var(--green);letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.ew::before{content:'';width:22px;height:1px;background:var(--green);}
 .sh{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,50px);color:var(--ink);line-height:1.1;margin-bottom:44px;font-weight:600;}
 
 /* ── SPLIT IDENTITY SECTION ── */
-.identity-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;border:1px solid var(--line);border-radius:16px;overflow:hidden;}
+.identity-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--paper3);border:1px solid var(--paper3);border-radius:16px;overflow:hidden;}
 .id-panel{padding:48px 44px;}
-.id-comms{background:var(--gold-light);}
-.id-data{background:var(--teal-light);}
+.id-comms{background:var(--paper2);}
+.id-data{background:var(--green-pale);}
 .id-tag{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px;}
-.id-comms .id-tag{color:var(--gold);}
-.id-data .id-tag{color:var(--teal);}
+.id-comms .id-tag{color:var(--ink3);}
+.id-data .id-tag{color:var(--green);}
 .id-tag::before{content:'';width:16px;height:2px;}
-.id-comms .id-tag::before{background:var(--gold);}
-.id-data .id-tag::before{background:var(--teal);}
+.id-comms .id-tag::before{background:var(--ink3);}
+.id-data .id-tag::before{background:var(--green);}
 .id-h{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;line-height:1.2;margin-bottom:14px;}
-.id-comms .id-h{color:#78350f;}
-.id-data .id-h{color:#064e3b;}
+.id-comms .id-h{color:var(--ink);}
+.id-data .id-h{color:var(--green);}
 .id-body{font-size:14px;line-height:1.8;margin-bottom:20px;}
-.id-comms .id-body{color:#92400e;}
-.id-data .id-body{color:#065f46;}
+.id-comms .id-body{color:var(--ink2);}
+.id-data .id-body{color:var(--ink2);}
 .id-list{display:flex;flex-direction:column;gap:8px;}
 .id-item{font-size:13px;display:flex;align-items:flex-start;gap:8px;font-family:'DM Mono',monospace;}
-.id-comms .id-item{color:#a16207;}
-.id-data .id-item{color:#047857;}
+.id-comms .id-item{color:var(--ink3);}
+.id-data .id-item{color:var(--green-mid);}
 .id-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:5px;}
-.id-comms .id-dot{background:var(--gold);}
-.id-data .id-dot{background:var(--teal);}
+.id-comms .id-dot{background:var(--ink3);}
+.id-data .id-dot{background:var(--green);}
 
 /* ── ABOUT ── */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
 .about-text p{font-size:15.5px;line-height:1.87;color:var(--ink2);margin-bottom:16px;}
 .about-text p strong{color:var(--ink);font-weight:500;}
-.about-pull{font-family:'Cormorant Garamond',serif;font-size:24px;font-style:italic;color:var(--ink);line-height:1.45;margin:28px 0;padding-left:22px;border-left:3px solid var(--teal);}
+.about-pull{font-family:'Cormorant Garamond',serif;font-size:24px;font-style:italic;color:var(--ink);line-height:1.45;margin:28px 0;padding-left:22px;border:1px solid var(--green);}
 .awards{display:flex;flex-direction:column;gap:10px;margin-top:24px;}
-.award-item{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--gold-light);border-radius:10px;}
-.award-text{font-size:13px;color:#92400e;line-height:1.5;}
+.award-item{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--terra-light);border-radius:10px;}
+.award-text{font-size:13px;color:#8c3d1a;line-height:1.5;}
 .award-text strong{display:block;font-weight:500;font-size:13px;}
 
 /* stats */
@@ -147,13 +151,13 @@ h1.hero-name em{color:var(--teal);font-style:italic;}
 .sk-label{font-size:13px;color:var(--ink);width:136px;flex-shrink:0;}
 .sk-track{flex:1;height:4px;background:var(--paper3);border-radius:2px;}
 .sk-fill{height:4px;border-radius:2px;}
-.sk-teal{background:var(--teal);}
-.sk-gold{background:var(--gold);}
+.sk-teal{background:var(--green);}
+.sk-gold{background:var(--green-mid);}
 
 /* ── COMMS WORK ── */
-.work-dark{background:var(--ink);}
-.work-dark .ew{color:var(--teal-mid);}
-.work-dark .ew::before{background:var(--teal-mid);}
+.work-dark{background:var(--dark);}
+.work-dark .ew{color:var(--green-mid);}
+.work-dark .ew::before{background:var(--green-mid);}
 .work-dark .sh{color:#fff;}
 .port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
 .port-card{
@@ -161,7 +165,7 @@ h1.hero-name em{color:var(--teal);font-style:italic;}
   border-radius:14px;overflow:hidden;
   transition:transform .25s,border-color .25s;
 }
-.port-card:hover{transform:translateY(-5px);border-color:rgba(52,211,153,.4);}
+.port-card:hover{transform:translateY(-5px);border-color:rgba(45,140,106,.4);}
 .port-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;}
 .port-placeholder{
   width:100%;aspect-ratio:4/3;
@@ -170,7 +174,7 @@ h1.hero-name em{color:var(--teal);font-style:italic;}
 }
 .port-body{padding:16px 18px 20px;}
 .port-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;}
-.port-tag{font-family:'DM Mono',monospace;font-size:10px;color:var(--teal-mid);background:rgba(52,211,153,.08);padding:3px 8px;border-radius:10px;}
+.port-tag{font-family:'DM Mono',monospace;font-size:10px;color:var(--green-mid);background:rgba(45,140,106,.08);padding:3px 8px;border-radius:10px;}
 .port-title{font-family:'Cormorant Garamond',serif;font-size:18px;color:#fff;margin-bottom:6px;font-weight:600;line-height:1.2;}
 .port-desc{font-size:12.5px;color:rgba(255,255,255,.4);line-height:1.6;}
 
@@ -182,24 +186,24 @@ h1.hero-name em{color:var(--teal);font-style:italic;}
   display:grid;grid-template-columns:1fr auto;align-items:start;gap:20px;
   transition:border-color .2s,box-shadow .2s;
 }
-.project-card:hover{border-color:var(--teal);box-shadow:0 4px 24px rgba(13,122,95,.07);}
+.project-card:hover{border-color:var(--green);box-shadow:0 4px 24px rgba(26,92,69,.07);}
 .proj-num{font-family:'DM Mono',monospace;font-size:10px;color:var(--ink3);margin-bottom:5px;letter-spacing:1px;}
 .proj-name{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--ink);margin-bottom:7px;font-weight:600;}
 .proj-desc{font-size:13.5px;color:var(--ink2);line-height:1.72;margin-bottom:12px;}
 .proj-stack{display:flex;gap:7px;flex-wrap:wrap;}
-.stack-pill{font-family:'DM Mono',monospace;font-size:11px;color:var(--teal);background:var(--teal-light);padding:3px 10px;border-radius:10px;}
-.proj-link{font-family:'DM Mono',monospace;font-size:12px;color:var(--teal);text-decoration:none;border:1px solid rgba(13,122,95,.25);padding:9px 16px;border-radius:8px;white-space:nowrap;transition:all .2s;flex-shrink:0;margin-top:2px;}
-.proj-link:hover{background:var(--teal);color:#fff;}
+.stack-pill{font-family:'DM Mono',monospace;font-size:11px;color:var(--green);background:var(--green-light);padding:3px 10px;border-radius:10px;}
+.proj-link{font-family:'DM Mono',monospace;font-size:12px;color:var(--green);text-decoration:none;border:1px solid rgba(26,92,69,.25);padding:9px 16px;border-radius:8px;white-space:nowrap;transition:all .2s;flex-shrink:0;margin-top:2px;}
+.proj-link:hover{background:var(--green);color:#fff;}
 
 /* NLP highlight */
 .nlp-highlight{
-  background:linear-gradient(135deg,var(--teal-light),var(--blue-light));
-  border:1px solid rgba(13,122,95,.2);border-radius:14px;
+  background:linear-gradient(135deg,var(--green-light),var(--green-pale));
+  border:1px solid rgba(26,92,69,.2);border-radius:14px;
   padding:26px 30px;margin-bottom:14px;
   display:grid;grid-template-columns:1fr auto;align-items:start;gap:20px;
 }
-.nlp-tag{display:inline-block;background:var(--teal);color:#fff;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:10px;margin-bottom:8px;}
-.nlp-why{font-size:12.5px;color:var(--teal);font-style:italic;margin-top:10px;padding:8px 12px;background:rgba(255,255,255,.5);border-radius:8px;line-height:1.5;}
+.nlp-tag{display:inline-block;background:var(--green);color:#fff;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:10px;margin-bottom:8px;}
+.nlp-why{font-size:12.5px;color:var(--green);font-style:italic;margin-top:10px;padding:8px 12px;background:rgba(255,255,255,.5);border-radius:8px;line-height:1.5;}
 
 /* ── TIMELINE ── */
 .tl-sec{background:white;}
@@ -207,23 +211,23 @@ h1.hero-name em{color:var(--teal);font-style:italic;}
 .tl-item{display:grid;grid-template-columns:160px 1fr;gap:36px;padding-bottom:48px;position:relative;}
 .tl-item:not(:last-child)::after{content:'';position:absolute;left:calc(160px + 18px);top:10px;bottom:0;width:1px;background:var(--paper3);}
 .tl-date{font-family:'DM Mono',monospace;font-size:11px;color:var(--ink3);text-align:right;padding-top:2px;line-height:1.6;}
-.tl-dot{position:absolute;left:calc(160px + 13px);top:4px;width:12px;height:12px;border-radius:50%;background:var(--teal);border:2px solid white;box-shadow:0 0 0 2px var(--teal);}
-.tl-org{font-family:'DM Mono',monospace;font-size:10px;color:var(--teal);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;}
+.tl-dot{position:absolute;left:calc(160px + 13px);top:4px;width:12px;height:12px;border:1px solid var(--green);}
+.tl-org{font-family:'DM Mono',monospace;font-size:10px;color:var(--green);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;}
 .tl-role{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--ink);margin-bottom:10px;font-weight:600;}
 .tl-desc{font-size:13.5px;color:var(--ink2);line-height:1.75;}
-.tl-badge{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:var(--gold);background:var(--gold-light);padding:4px 10px;border-radius:20px;margin-top:10px;margin-right:6px;}
+.tl-badge{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:var(--terra);background:var(--terra-light);padding:4px 10px;border-radius:20px;margin-top:10px;margin-right:6px;}
 
 /* ── CONTACT ── */
-.contact-sec{background:var(--ink);text-align:center;}
-.contact-sec .ew{justify-content:center;color:var(--teal-mid);}
+.contact-sec{background:var(--dark);text-align:center;}
+.contact-sec .ew{justify-content:center;color:var(--green-mid);}
 .contact-sec .ew::before{display:none;}
 .contact-h{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,5vw,66px);color:#fff;margin-bottom:16px;font-weight:600;line-height:1.1;}
-.contact-h em{color:var(--teal-mid);font-style:italic;}
+.contact-h em{color:var(--green-mid);font-style:italic;}
 .contact-sub{font-size:16px;color:rgba(255,255,255,.4);margin:0 auto 48px;max-width:420px;line-height:1.7;}
 .contact-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
 .c-btn{display:flex;align-items:center;gap:8px;padding:13px 24px;border:1px solid rgba(255,255,255,.12);border-radius:40px;color:rgba(255,255,255,.55);text-decoration:none;font-size:14px;transition:all .2s;}
-.c-btn:hover{border-color:var(--teal-mid);color:var(--teal-mid);}
-.c-btn-fill{background:var(--teal);border-color:var(--teal);color:#fff;}
+.c-btn:hover{border-color:var(--green-mid);color:var(--green-mid);}
+.c-btn-fill{background:var(--green);border-color:var(--green);color:#fff;}
 .c-btn-fill:hover{background:#0a6650;border-color:#0a6650;color:#fff;}
 
 footer{background:#0a0907;padding:22px 60px;display:flex;justify-content:space-between;align-items:center;}
@@ -275,7 +279,7 @@ footer{background:#0a0907;padding:22px 60px;display:flex;justify-content:space-b
     <div class="eyebrow-sm">Nairobi, Kenya · Communications · Data Science</div>
     <h1 class="hero-name">Where <em>data</em><br/>meets the story.</h1>
     <p class="hero-body">
-      I'm a communications and PR professional who also speaks data. I work at the intersection of <strong>strategic storytelling</strong> and <strong>analytical thinking</strong> — making complex ideas clear, and making evidence feel human.
+      I'm a communications and PR professional who also speaks data. I work at the intersection of <strong>strategic storytelling</strong> and <strong>analytical thinking</strong>, making complex ideas clear and making evidence feel human.
     </p>
     <div class="dual-badge">
       <span class="db-half db-comms">Communications & PR</span>
@@ -370,7 +374,7 @@ footer{background:#0a0907;padding:22px 60px;display:flex;justify-content:space-b
       <div class="id-panel id-data">
         <div class="id-tag">Data Science</div>
         <div class="id-h">The analyst.</div>
-        <p class="id-body">Machine learning, NLP, and exploratory analysis — applied to real business problems. I don't just build models; I translate what they mean into decisions.</p>
+        <p class="id-body">Machine learning, NLP, and exploratory analysis — applied to real business problems. I don't just build models. I translate what they mean into decisions.</p>
         <div class="id-list">
           <div class="id-item"><div class="id-dot"></div>Python, Pandas, Scikit-learn</div>
           <div class="id-item"><div class="id-dot"></div>SQL & database querying</div>
@@ -390,9 +394,9 @@ footer{background:#0a0907;padding:22px 60px;display:flex;justify-content:space-b
     <div class="about-grid">
       <div class="about-text">
         <h2 class="sh" style="margin-bottom:20px;">The analyst who can write.<br/>The writer who can analyse.</h2>
-        <p>I grew up fascinated by two things: <strong>how language works</strong> and <strong>what patterns reveal</strong>. My linguistics degree gave me the first. My data science training at Moringa School gave me the second. My career at TESPOK is where I get to use both every day.</p>
-        <p>At TESPOK — Kenya's association for technology service providers — I manage communications, shape brand narratives, and make sure complex work on Internet governance and ICT infrastructure is understood by the people who need to act on it.</p>
-        <p>Alongside that, I've been building a body of data science work — sentiment analysis, churn prediction, risk modelling — that I'm genuinely proud of. The projects here aren't academic exercises. They're the kind of thinking I bring to every problem.</p>
+        <p>I grew up fascinated by two things: how language works and what patterns reveal. My linguistics degree gave me the first. Completing a Data Science certificate at Moringa School gave me the second. My career at TESPOK is where I get to use both every day.</p>
+        <p>At TESPOK, Kenya's association for technology service providers, I manage communications, shape brand narratives, and make sure complex work on Internet governance and ICT infrastructure is understood by the people who need to act on it. Translating the technical into the human is what I do every day.</p>
+        <p>Alongside that, I've built a body of data science work I'm genuinely proud of. Sentiment analysis, churn prediction, risk modelling. The projects here aren't academic exercises. They're the kind of thinking I bring to every problem.</p>
         <div class="about-pull">"The most powerful insight is worthless if it can't be communicated. That's the gap I live in."</div>
         <div class="awards">
           <div class="award-item"><span style="font-size:16px;flex-shrink:0;">🏆</span><div class="award-text"><strong>Female Talent to Watch of the Year — 2021</strong>Muthaiga Golf Club staff recognition programme</div></div>
@@ -451,7 +455,7 @@ footer{background:#0a0907;padding:22px 60px;display:flex;justify-content:space-b
         <div class="port-body">
           <div class="port-tags"><span class="port-tag">Event design</span><span class="port-tag">Photography</span></div>
           <div class="port-title">Kenya Peering Forum 2024</div>
-          <div class="port-desc">Save-the-date collateral for KEPF — Kenya's flagship Internet infrastructure networking event.</div>
+          <div class="port-desc">Save-the-date collateral for KEPF, Kenya's flagship Internet infrastructure networking event.</div>
         </div>
       </div>
 
@@ -515,12 +519,12 @@ footer{background:#0a0907;padding:22px 60px;display:flex;justify-content:space-b
         </div>
       </div>
 
-      <div class="port-card" style="background:rgba(13,122,95,.07);border-color:rgba(52,211,153,.18);">
+      <div class="port-card" style="background:rgba(26,92,69,.07);border-color:rgba(45,140,106,.18);">
         <div style="padding:24px 20px 0;">
-          <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--teal-mid);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Presentation deck · March 2024</div>
+          <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--green-mid);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Presentation deck · March 2024</div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:#fff;font-weight:600;margin-bottom:8px;">KIXP Infrastructure Deck</div>
           <div style="font-size:12.5px;color:rgba(255,255,255,.38);line-height:1.6;margin-bottom:18px;">Technical stakeholder deck on KIXP infrastructure, peering services, and network connectivity.</div>
-          <a href="KIXP%20Presentation%20130324_v2(1).pdf" style="font-family:'DM Mono',monospace;font-size:11px;color:var(--teal-mid);text-decoration:none;border:1px solid rgba(52,211,153,.25);padding:7px 14px;border-radius:6px;display:inline-block;">View PDF →</a>
+          <a href="KIXP%20Presentation%20130324_v2(1).pdf" style="font-family:'DM Mono',monospace;font-size:11px;color:var(--green-mid);text-decoration:none;border:1px solid rgba(45,140,106,.25);padding:7px 14px;border-radius:6px;display:inline-block;">View PDF →</a>
         </div>
         <div class="port-body" style="padding-top:14px;">
           <div class="port-tags"><span class="port-tag">Technical docs</span><span class="port-tag">Presentations</span></div>
@@ -536,18 +540,18 @@ footer{background:#0a0907;padding:22px 60px;display:flex;justify-content:space-b
   <div class="sec-inner">
     <div class="ew">Data science</div>
     <h2 class="sh">GitHub projects</h2>
-    <p style="font-size:15.5px;color:var(--ink2);max-width:560px;line-height:1.75;margin-bottom:44px;margin-top:-28px;">Four applied analysis projects solving real business problems — built during my Moringa School training.</p>
+    <p style="font-size:15.5px;color:var(--ink2);max-width:560px;line-height:1.75;margin-bottom:44px;margin-top:-28px;">Four applied analysis projects solving real business problems — built as part of my Moringa School Data Science certificate.</p>
 
     <div class="nlp-highlight">
       <div>
         <span class="nlp-tag">Most relevant to comms</span>
         <div class="proj-num">02 / NLP</div>
-        <div class="proj-name">Twitter Sentiment — Apple vs Google</div>
-        <div class="proj-desc">NLP analysis of brand perception on Twitter. Compares how the public feels about two of the world's most tracked brands — exactly the kind of insight PR and comms teams need for reputation management and crisis preparedness.</div>
+        <div class="proj-name">Twitter Sentiment: Apple vs Google</div>
+        <div class="proj-desc">NLP analysis of brand perception on Twitter. Compares how the public feels about two of the world's most tracked brands. Exactly the kind of insight PR and comms teams need for reputation management and crisis preparedness.</div>
         <div class="proj-stack">
           <span class="stack-pill">Python</span><span class="stack-pill">NLP</span><span class="stack-pill">NLTK</span><span class="stack-pill">Sentiment analysis</span>
         </div>
-        <div class="nlp-why">This project sits exactly at the intersection of my two worlds — using data science to answer a communications question.</div>
+        <div class="nlp-why">This project sits exactly at the intersection of my two worlds, using data science to answer a communications question.</div>
       </div>
       <a href="https://github.com/Marilyn2961/A-Comparative-Analysis-of-Public-Sentiment-on-Twitter-towards-Apple-and-Google-Products-using-NLP" target="_blank" class="proj-link">GitHub →</a>
     </div>
@@ -556,7 +560,7 @@ footer{background:#0a0907;padding:22px 60px;display:flex;justify-content:space-b
       <div>
         <div class="proj-num">01 / Machine learning</div>
         <div class="proj-name">Telecom Customer Churn Prediction</div>
-        <div class="proj-desc">Full ML pipeline predicting which telecom customers are likely to leave — from raw data to business recommendations. Applicable to CRM and customer comms strategy.</div>
+        <div class="proj-desc">Full ML pipeline predicting which telecom customers are likely to leave. Full pipeline from raw data to business recommendations. Applicable to CRM and customer comms strategy.</div>
         <div class="proj-stack"><span class="stack-pill">Python</span><span class="stack-pill">Scikit-learn</span><span class="stack-pill">Pandas</span><span class="stack-pill">Classification</span></div>
       </div>
       <a href="https://github.com/Marilyn2961/Telecom_Churn_Prediction_Project" target="_blank" class="proj-link">GitHub →</a>
@@ -566,7 +570,7 @@ footer{background:#0a0907;padding:22px 60px;display:flex;justify-content:space-b
       <div>
         <div class="proj-num">03 / Risk analysis</div>
         <div class="proj-name">Aviation Risk Analysis</div>
-        <div class="proj-desc">Data-driven evaluation of aircraft safety for companies entering aviation — turning messy incident records into defensible investment recommendations.</div>
+        <div class="proj-desc">Data-driven evaluation of aircraft safety for companies entering aviation. Turns messy incident records into defensible investment recommendations.</div>
         <div class="proj-stack"><span class="stack-pill">Python</span><span class="stack-pill">EDA</span><span class="stack-pill">Matplotlib</span><span class="stack-pill">Pandas</span></div>
       </div>
       <a href="https://github.com/Marilyn2961/Aviation-Risk-Analysis" target="_blank" class="proj-link">GitHub →</a>
@@ -576,7 +580,7 @@ footer{background:#0a0907;padding:22px 60px;display:flex;justify-content:space-b
       <div>
         <div class="proj-num">04 / Business intelligence</div>
         <div class="proj-name">Box Office Performance Analysis</div>
-        <div class="proj-desc">Exploratory analysis of film data to identify genres and trends that drive box office success — translating patterns into actionable content strategy.</div>
+        <div class="proj-desc">Exploratory analysis of film data to identify genres and trends that drive box office success, translating patterns into actionable content strategy.</div>
         <div class="proj-stack"><span class="stack-pill">Python</span><span class="stack-pill">EDA</span><span class="stack-pill">Seaborn</span><span class="stack-pill">Matplotlib</span></div>
       </div>
       <a href="https://github.com/Marilyn2961/Box-Office-Performance-Analysis" target="_blank" class="proj-link">GitHub →</a>
@@ -603,12 +607,12 @@ footer{background:#0a0907;padding:22px 60px;display:flex;justify-content:space-b
       </div>
 
       <div class="tl-item">
-        <div class="tl-date">Feb 2025<br/>Oct 2025</div>
+        <div class="tl-date">Feb – Oct<br/>2025</div>
         <div>
           <div class="tl-dot"></div>
-          <div class="tl-org">Moringa School · Training</div>
-          <div class="tl-role">Data Science Program</div>
-          <div class="tl-desc">Comprehensive training in Python, SQL, machine learning, NLP, data visualization, and AI fundamentals. Built four applied analysis projects solving real business problems.</div>
+          <div class="tl-org">Moringa School · Completed 2025</div>
+          <div class="tl-role">Data Science Certificate</div>
+          <div class="tl-desc">Completed comprehensive training in Python, SQL, machine learning, NLP, data visualization, and AI fundamentals. Built four applied projects: churn prediction, sentiment analysis, aviation risk, and box office analysis.</div>
         </div>
       </div>
 
@@ -645,7 +649,7 @@ footer{background:#0a0907;padding:22px 60px;display:flex;justify-content:space-b
   <div class="sec-inner">
     <div class="ew">Say hello</div>
     <h2 class="contact-h">Let's <em>connect.</em></h2>
-    <p class="contact-sub">Whether you want to talk data, comms, or a project where both matter — I'd love to hear from you.</p>
+    <p class="contact-sub">Whether you want to talk data, comms, or a project where both matter. I'd love to hear from you.</p>
     <div class="contact-row">
       <a href="mailto:akinyimarilyn@gmail.com" class="c-btn c-btn-fill">Email me</a>
       <a href="https://www.linkedin.com/in/marilyn-akinyi-602b99214" target="_blank" class="c-btn">LinkedIn</a>
