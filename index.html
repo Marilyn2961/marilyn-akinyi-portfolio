@@ -287,7 +287,7 @@ footer{background:#0a0907;padding:22px 60px;display:flex;justify-content:space-b
     </div>
     <div class="hero-actions">
       <a href="#work" class="btn-fill">See my work</a>
-      <a href="https://github.com/Marilyn2961/marilyn-akinyi-portfolio/raw/main/Marilyn%20Akinyi%20Resume.pdf" target="_blank" class="btn-ghost">Download CV</a>
+      <a href="https://github.com/Marilyn2961/marilyn-akinyi-portfolio/raw/main/Marilyn_Akinyi_CV.docx" target="_blank" class="btn-ghost">Download CV</a>
     </div>
   </div>
   <div class="hero-card">
@@ -654,7 +654,7 @@ footer{background:#0a0907;padding:22px 60px;display:flex;justify-content:space-b
       <a href="mailto:akinyimarilyn@gmail.com" class="c-btn c-btn-fill">Email me</a>
       <a href="https://www.linkedin.com/in/marilyn-akinyi-602b99214" target="_blank" class="c-btn">LinkedIn</a>
       <a href="https://github.com/Marilyn2961" target="_blank" class="c-btn">GitHub</a>
-      <a href="https://github.com/Marilyn2961/marilyn-akinyi-portfolio/raw/main/Marilyn%20Akinyi%20Resume.pdf" target="_blank" class="c-btn">Download CV</a>
+      <a href="https://github.com/Marilyn2961/marilyn-akinyi-portfolio/raw/main/Marilyn_Akinyi_CV.docx" target="_blank" class="c-btn">Download CV</a>
     </div>
   </div>
 </section>
@@ -664,5 +664,31 @@ footer{background:#0a0907;padding:22px 60px;display:flex;justify-content:space-b
   <span class="ft-copy">Nairobi, Kenya · 2025</span>
 </footer>
 
+<script>
+document.querySelectorAll('.port-img').forEach(function(img) {
+  var original = img.src;
+  var filename = original.split('/').pop();
+  var tries = [
+    original,
+    'images%20%22/' + filename,
+    './images%20%22/' + filename,
+    'images "/' + filename,
+    'images%20"/' + filename,
+  ];
+  var idx = 0;
+  function tryNext() {
+    idx++;
+    if (idx < tries.length) {
+      img.src = tries[idx];
+    } else {
+      img.style.display = 'none';
+      var placeholder = img.nextElementSibling;
+      if (placeholder) placeholder.style.display = 'flex';
+    }
+  }
+  img.onerror = tryNext;
+  img.src = tries[0];
+});
+</script>
 </body>
 </html>
